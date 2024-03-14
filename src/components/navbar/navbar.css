@@ -1,0 +1,218 @@
+.udemy__navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 2rem 6rem;
+}
+
+.card__img {
+    width: 30px;
+    height: auto;
+    
+}
+
+.card__img-fullscreen {
+    width: 30px;
+    height: auto;
+}
+
+
+
+.udemy__navbar-links {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.udemy__navbar-links_logo {
+    margin-right: 2rem;
+}
+
+.udemy__navbar-links_logo img {
+    width: 75px;
+    height: 25px;
+}
+
+.udemy__navbar-links_container {
+    display: flex;
+    flex-direction: row;
+}
+
+.udemy__navbar-sign {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/*Add open close drop menu animation */
+
+.udemy__navbar-menu_container {
+    transition: transform 1s ease-in-out;
+    animation: showMenu 1s ease-in;
+}
+
+.udemy__navbar-menu_container:hover {
+    transform: scale(1.1);
+}
+
+@keyframes showMenu {
+    0% {
+        opacity: 0;
+        
+    }
+    100% {
+        opacity: 1;
+        
+    }
+}
+
+.udemy__navbar-links_container p,
+.udemy__navbar-sign p
+ {
+    color: rgb(253, 253, 253);
+    font-family: var(--font-family);/* CSS variables, also known as custom properties, 
+                                       allow you to define reusable values that can be used throughout your CSS code. 
+                                        By using a CSS variable in the font-family property, 
+                                        you can easily change the font family across your stylesheets
+                                        by updating the value of the CSS variable.*/
+    font-weight: 600;/* the text gets bolder*/
+    font-size: 20px;
+    line-height: 25px;
+    text-transform: capitalize;
+
+    margin: 0 1rem;
+    cursor: pointer;
+
+}
+
+.udemy__navbar-menu_container p {
+     color: rgb(226, 218, 218);
+     font-family: var(--font-family);/* CSS variables, also known as custom properties, 
+     allow you to define reusable values that can be used throughout your CSS code. 
+      By using a CSS variable in the font-family property, 
+      you can easily change the font family across your stylesheets
+      by updating the value of the CSS variable.*/
+font-weight: 400;/* the text gets bolder*/
+font-size: 20px;
+line-height: 25px;
+text-transform: capitalize;
+margin: 1rem 2rem;
+padding: 1rem;
+
+cursor: pointer;
+}
+
+
+
+
+.udemy__navbar-sign button,
+.udemy__navbar-menu_container button {
+    padding: 0.5rem 1rem;
+    color: #fff;
+    background: #2606db6c;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 5px;
+    border: none;
+    outline: none; /*It is similar to the border property, 
+                    but it does not affect the layout of the page as it 
+                    does not take up space or affect the positioning of 
+                    other elements.*/
+    cursor: pointer;
+}
+
+.udemy__navbar-menu {
+    margin-left: 1rem;
+    
+    display: none;
+    position: relative;
+}
+
+.udemy__navbar-menu svg {
+    cursor: pointer;
+}
+
+.udemy__navbar-menu_container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+
+    text-align: end;
+    
+    padding: 2rem;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    margin-top: 1rem;
+    min-width: 500px;
+    border-radius: 5px;
+    box-shadow: 0 0 5 rgba(233, 5, 5, 0.2)
+
+    
+}
+
+
+.udemy__navbar-menu_container-links-sign {
+    display: none;
+}
+
+@media screen and (max-width: 1050px) {
+.card__img {
+    display: visible;
+}
+
+.card__img-fullscreen {
+    display: none;
+}
+
+    .udemy__navbar-links_container {
+        display: none;
+    }
+
+    .udemy__navbar-menu {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    .card__img {
+        display: visible;
+    }
+    .udemy__navbar {
+        padding: 2rem 4rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .card__img {
+        display: visible;
+    }
+    .udemy__navbar {
+        padding: 2rem;
+    }
+
+    .udemy__navbar-sign {
+        display: none;
+    }
+
+    .udemy__navbar-menu_container {
+        top: 20px;
+    }
+
+    .udemy__navbar-menu_container-links-sign {
+        display: block;
+    }
+}
+
+.udemy__navbar-menu_container-links {
+    background-color: rgba(34, 34, 82, 0.822);
+    padding: 1rem;
+    border-radius: 1rem;
+}

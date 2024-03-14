@@ -1,0 +1,161 @@
+.udemy__header-stats {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+    justify-content: space-between;
+}
+
+.stats_circle {
+    width: 160px;
+    height: 160px;
+    border-radius: 40%;
+    background-color: rgba(227, 228, 233, 0.014);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    position: relative;
+    padding: 4rem;
+    overflow: hidden;
+} 
+
+.stats_circle span {
+    font-size: 15px;
+    font-family: var(--font-family);
+    color: var(--color-text);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.stats_circle:hover span {
+    transform: scale(1.1);
+}
+
+/*Here starts the wawe animation*/
+
+.wawe__container {
+    height: 160px;
+    width: 160px;
+    border-radius: 40%;
+    font-size: 18px;
+    
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wawe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: -2px;
+    top: calc(44%);
+    
+    transition: all 7s;
+    z-index: -1;
+}
+
+.wawe:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0; 
+    width: 120%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.411)),url(wave.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    
+    
+    animation: wave 2s linear infinite alternate-reverse;
+    
+}
+
+@keyframes wave {
+    0% {
+        
+        transform: translateX(-10%);
+    }
+
+    100% {
+        
+        transform: translateX(-2%);
+    }
+}
+
+
+@media screen and (max-width: 1050px) {
+    .udemy__header-stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 2rem;
+    }
+    .udemy__header-stats div {
+        width: 100%;  
+    }
+
+     .stats_circle  {
+        width: 120px;
+        height: 120px;
+        padding: 1rem;
+        margin: 0;
+
+        
+    }
+
+    .stats_circle span {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .udemy__header-stats {
+       display: grid;
+       grid-template-columns: repeat(4, 1fr);
+       grid-column-gap: 1rem;
+    }
+    .stats_circle  {
+        width: 100px;
+        height: 100px;
+        padding: 2rem;
+        margin: 0;
+    }
+    .udemy__header-stats p {
+        font-size: 0.8rem;
+        line-height: 24px;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .udemy__header-stats {
+        grid-template-columns: repeat(2, 2fr);
+        grid-template-rows: repeat(2, 1fr);
+        
+        grid-gap: 5%;
+    }
+
+    .udemy__header-stats div {
+       width: 100%; 
+    }
+    .stats_circle {
+        width: 120px;
+        height: 120px;
+        padding: 1rem;
+        margin: 0;
+    }
+
+    .udemy__header-stats span {
+        font-size: 12px;
+        line-height: 18px;
+    }
+}
